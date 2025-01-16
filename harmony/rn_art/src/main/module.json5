@@ -1,0 +1,9 @@
+{
+  "module": {
+    "name": "rn_art",
+    "type": "har",
+    "deviceTypes": [
+      "default"
+    ]
+  }
+}

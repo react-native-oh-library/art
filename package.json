@@ -1,8 +1,7 @@
 {
-  "name": "@react-native-community/art",
+  "name": "@react-native-oh-tpl/art",
   "version": "1.2.0",
   "license": "MIT",
-  "author": "@react-native-community",
   "homepage": "https://github.com/react-native-community/react-native-art",
   "description": "React Native module that allows you to draw vector graphics",
   "main": "./lib/index.js",
@@ -13,13 +12,12 @@
     "react-native-community",
     "art"
   ],
+  "harmony": {
+    "alias": "@react-native-community/art"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "android": "react-native run-android --root example",
-    "ios": "react-native run-ios --project-path example/ios --scheme example",
-    "flow-check": "flow check",
-    "lint": "eslint . --cache",
-    "test": "jest"
+    "codegen-lib": "rm -rf ../harmony/rn_art/src/main/cpp/generated && rm -rf ../harmony/rn_art/src/main/ets/generated && react-native codegen-lib-harmony --no-safety-check --npm-package-name react-native-community-art --cpp-output-path ../harmony/rn_art/src/main/cpp/generated --ets-output-path ../harmony/rn_art/src/main/ets/generated --arkts-components-spec-paths ./lib/spec"
   },
   "dependencies": {
     "art": "^0.10.3",
@@ -31,14 +29,7 @@
     "react-native": "*"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/runtime": "^7.4.5",
-    "@react-native-community/eslint-config": "^0.0.5",
-    "eslint": "^5.16.0",
-    "flow-bin": "^0.92.0",
-    "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.54.1",
-    "react": "16.8.3",
-    "react-native": "0.59.9"
+    "react-native-harmony-cli": "npm:@react-native-oh/react-native-harmony-cli@^0.0.27",
+    "@react-native-community/cli": "latest"
   }
 }
